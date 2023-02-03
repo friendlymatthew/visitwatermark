@@ -7,6 +7,11 @@
   min-height: 100vh;
 }
 
+.book {
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+}
+
 .description {
   display: inherit;
   justify-content: inherit;
