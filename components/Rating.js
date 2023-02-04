@@ -110,7 +110,11 @@ export default function Rating() {
 			<div className="mt-20 px-20 lg:px-40 grid grid-cols-1 gap-y-4 divide-y-[0.5px] divide-gray-400">
 				{ratings.map(({ person, desc }) => {
 					return (
-						<AnimationOnScroll animateIn="animate__fadeIn" duration={2}>
+						<AnimationOnScroll
+							animateIn="animate__fadeIn"
+							duration={2}
+							key={person}
+						>
 							{desc ? (
 								<div className="font-title font-semibold text-xl py-2">
 									<div className="">{person}</div>

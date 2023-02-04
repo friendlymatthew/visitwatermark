@@ -117,7 +117,7 @@ export default function Availability() {
 						id="guests"
 						className="cursor-pointer w-full p-2 text-lg  group-focus:bg-[#747474]"
 					>
-						<option selected>Number of guests</option>
+						<option defaultValue={true}>Number of guests</option>
 						<option value="1">1 Guest</option>
 						<option value="2">2 Guests</option>
 						<option value="3">3 Guests</option>
