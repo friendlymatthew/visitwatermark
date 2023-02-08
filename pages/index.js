@@ -8,6 +8,8 @@ import Amenities from "@/components/Amenities";
 import Footer from "@/components/Footer";
 import Rating from "@/components/Rating";
 import Location from "@/components/Location";
+import Carousel from "@/components/Carousel";
+import Header from "@/components/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -73,17 +75,39 @@ const interior = {
 	body: [
 		{
 			title: "Living Area",
-			img: "",
+			img: "/living.jpg",
 			desc: "Our living area features a pullout couch, dining area, 50' tv, ",
 		},
+		{
+			title: "Master Bedroom",
+			img: "/master.jpg",
+			desc: "Our living area features a pullout couch, dining area, 50' tv, ",
+		},
+		{
+			title: "Bathroom",
+			img: "/bath.jpg",
+			desc: "Our living area features a pullout couch, dining area, 50' tv, ",
+		},
+
 		{
 			title: "Kitchen",
-			img: "",
+			img: "/kitchen.jpg",
 			desc: "Our living area features a pullout couch, dining area, 50' tv, ",
 		},
 		{
-			title: "Bedrooms",
-			img: "",
+			title: "Bedroom",
+			img: "/second.jpg",
+			desc: "Our living area features a pullout couch, dining area, 50' tv, ",
+		},
+
+		{
+			title: "Laundry",
+			img: "/bath2.jpg",
+			desc: "Our living area features a pullout couch, dining area, 50' tv, ",
+		},
+		{
+			title: "Patio",
+			img: "/veranda.jpg",
 			desc: "Our living area features a pullout couch, dining area, 50' tv, ",
 		},
 	],
@@ -114,14 +138,16 @@ export default function Home() {
 				/>
 			</Head>
 			<main className="w-full bg-white text-[#1c1c1c] grid grid-cols-1">
-				<div className="h-screen">
-					<div className="h-[500px]"></div>
+				<div className="">
+					<div className="w-full ">
+						<Carousel />
+					</div>
 					<div className="bg-[#1c1c1c] w-full flex justify-center">
 						<Availability />
 					</div>
 
 					<div className="w-full flex justify-center py-8">
-						<div className="grid grid-cols-1 md:grid-cols-2 items-start w-8/12 grid-flow-row">
+						<div className="grid grid-cols-1 md:grid-cols-2 items-start w-10/12 lg:w-8/12  grid-flow-row">
 							<div className="font-title text-4xl font-bold tracking-tight">
 								THE WATERMARK
 								<div className="text-lg font-body font-thin">

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Amenities({ title, body }) {
 	return (
-		<div className="w-8/12 text-body py-12 text-black">
+		<div className="w-10/12 lg:w-8/12  text-body py-12 text-black">
 			<AnimationOnScroll animateIn="animate__fadeIn" duration={1}>
 				<div className="text-xl font-thin mb-4 uppercase">{title}</div>
 			</AnimationOnScroll>

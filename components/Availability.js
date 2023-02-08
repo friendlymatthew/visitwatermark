@@ -95,7 +95,7 @@ export default function Availability() {
 	};
 
 	return (
-		<div className="bg-[#1c1c1c] w-8/12 py-4 text-white">
+		<div className="bg-[#1c1c1c] w-10/12 lg:w-8/12  py-4 text-white">
 			<div className="font-body font-thin text-xl mb-2">MAKE A RESERVATION</div>
 			<div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-x-3 gap-y-2">
 				<span className="group flex items-center cursor-pointer border-b-[2px] bg-[#2b2a33] pl-1 border-[#c7ddf3]">

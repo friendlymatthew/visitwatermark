@@ -77,7 +77,7 @@ export default function Rating() {
 	}, []);
 
 	return (
-		<div className="w-8/12 border-[0.5px] border-gray-400 py-8">
+		<div className="w-10/12 lg:w-8/12  border-[0.5px] border-gray-400 py-8">
 			<AnimationOnScroll animateIn="animate__fadeIn" duration={1}>
 				<div className="text-center font-title text-3xl font-bold uppercase mb-8">
 					<span>Our Reviews</span>{" "}
