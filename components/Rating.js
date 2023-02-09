@@ -78,7 +78,11 @@ export default function Rating() {
 
 	return (
 		<div className="w-10/12 lg:w-8/12  border-[0.5px] border-gray-400 py-8">
-			<AnimationOnScroll animateIn="animate__fadeIn" duration={1}>
+			<AnimationOnScroll
+				animateIn="animate__fadeIn"
+				duration={1}
+				initiallyVisible={true}
+			>
 				<div className="text-center font-title text-3xl font-bold uppercase mb-8">
 					<span>Our Reviews</span>{" "}
 					<span className="text-base font-body font-thin italic">
@@ -86,7 +90,7 @@ export default function Rating() {
 					</span>
 				</div>
 			</AnimationOnScroll>
-			<div className="grid grid-cols-1 md:grid-cols-2 px-20 gap-x-20 gap-y-4">
+			<div className="grid grid-cols-1 md:grid-cols-2 px-4 md:px-20 gap-x-20 gap-y-4">
 				{avgRating.map(({ cat, val }) => {
 					return (
 						<AnimationOnScroll
@@ -107,7 +111,7 @@ export default function Rating() {
 				})}
 			</div>
 
-			<div className="mt-20 px-20 lg:px-40 grid grid-cols-1 gap-y-4 divide-y-[0.5px] divide-gray-400">
+			<div className="mt-20 px-4 md:px-20 lg:px-40 grid grid-cols-1 gap-y-4 divide-y-[0.5px] divide-gray-400">
 				{ratings.map(({ person, desc }) => {
 					return (
 						<AnimationOnScroll
