@@ -181,14 +181,14 @@ export default function Home() {
 				<Header />
 				<div className="sticky top-0 z-30 bg-white text-black border-b-[0.5px] border-black">
 					<div className=" flex justify-center w-full py-4 text-sm sticky top-0 z-50">
-						<div className="w-8/12 flex justify-between">
+						<div className="w-10/12 lg:w-8/12 flex flex-wrap space-y-2 justify-between">
 							{navactions.map(({ id, title }) => {
 								return (
 									<div key={id} className="">
 										{title === "Reserve Now" ? (
 											<a
 												href={id}
-												className="border-2 py-[3px] px-8 border-black hover:bg-black hover:text-white transition ease-in duration-300 cursor-pointer underline-offset-[12px] uppercase  font-body font-extrabold"
+												className="block border-2 py-[3px] px-8 border-black hover:bg-black hover:text-white transition ease-in duration-300 cursor-pointer underline-offset-[12px] uppercase  font-body font-extrabold"
 											>
 												{title}
 											</a>
