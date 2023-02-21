@@ -95,7 +95,7 @@ export default function Rating() {
 					return (
 						<AnimationOnScroll
 							animateIn="animate__fadeIn"
-							duration={2}
+							duration={1}
 							key={cat}
 						>
 							<div className="lg:px-20 flex-none lg:flex font-thin text-xl font-body justify-between items-center">
@@ -116,7 +116,7 @@ export default function Rating() {
 					return (
 						<AnimationOnScroll
 							animateIn="animate__fadeIn"
-							duration={2}
+							duration={1}
 							key={person}
 						>
 							{desc ? (

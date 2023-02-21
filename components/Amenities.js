@@ -14,17 +14,15 @@ export default function Amenities({ title, body }) {
 			<div className="grid grid-cols-1  md:grid-cols-3 gap-x-8 gap-y-8 text-lg">
 				{body.map(({ title, img, desc }) => {
 					return (
-						<div key={title} className="font-thin">
-							<AnimationOnScroll animateIn="animate__fadeIn" duration={2}>
+						<div key={title} className="font-normal">
+							<AnimationOnScroll animateIn="animate__fadeIn" duration={1}>
 								<Image src={img} width={400} height={300} />
 							</AnimationOnScroll>
-							<AnimationOnScroll animateIn="animate__fadeIn" duration={2}>
-								<div className="uppercase font-normal text-base mt-8">
-									{title}
-								</div>
+							<AnimationOnScroll animateIn="animate__fadeIn" duration={1}>
+								<div className="uppercase text-base mt-4	">{title}</div>
 							</AnimationOnScroll>
-							<AnimationOnScroll animateIn="animate__fadeIn" duration={3}>
-								<div className="tracking-tight">{desc}</div>
+							<AnimationOnScroll animateIn="animate__fadeIn" duration={1}>
+								<div className="text-base font-thin">{desc}</div>
 							</AnimationOnScroll>
 						</div>
 					);

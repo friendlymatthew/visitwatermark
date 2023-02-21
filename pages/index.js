@@ -8,8 +8,10 @@ import Amenities from "@/components/Amenities";
 import Footer from "@/components/Footer";
 import Rating from "@/components/Rating";
 import Location from "@/components/Location";
+
 import Carousel from "@/components/Carousel";
 import Header from "@/components/Header";
+import CarouselTwo from "@/components/CarouselTwo";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,12 +21,12 @@ const transportation = {
 		{
 			title: "Biki Bikes",
 			img: "/biki.jpg",
-			desc: "Whip around in a biki bike",
+			desc: "Right outside of the front gates of Watermark, Biki bikes await you to take you anywhere you want on the island in minutes. Scattered throughout the island, Biki bike stands are easily accessible and convenient to use.",
 		},
 		{
 			title: "The Bus",
 			img: "/thebus.jpg",
-			desc: "Whip around in a biki bike",
+			desc: "As Watermark is located near famous landmarks such as Ala Moana Park and Ala Moana Mall, residents of Watermark benefit from a wide selection of bus routes and stops conveniently located nearby. With these buses, your traveling on the Oahu island is not limited to Waikiki.",
 		},
 	],
 };
@@ -35,32 +37,32 @@ const apartment = {
 		{
 			title: "Outdoor Lounge",
 			img: "/lounge.jpg",
-			desc: "Open space with couches and trees feel the fresh breeze brush along your asshole as you realize the hospitality is shit",
+			desc: "The beautiful ground floor lobby welcomes the guests with Hawaiian artworks, marble floors and spacious seating areas. Open all around, the lobby steps down to the resort-like pool and garden, truly making your arrival to Hawaii special. Professional concierge service at the front desk provides security to residents at all times.",
 		},
 		{
 			title: "Wellness Spa",
 			img: "/wellness.jpg",
-			desc: "Dumbbells, weights, yoga mats, ellipticals, treadmills, bikes",
+			desc: "This luxurious air conditioned pavilion includes a fully equipped weight rack and recently updated fitness center and two sauna rooms. Residents can enjoy the beautiful garden view while exercising. Fitness room amenities include: ellipticals, stationary bikes, treadmills, and weight equipment.",
 		},
 		{
 			title: "Swimming Pool",
 			img: "/swimming.jpg",
-			desc: "Hot tub",
+			desc: "Surrounded by natural stone tiles, this beautiful infinity pool is designed aesthetically with lava rocks and palm trees. Giant palm trees surround the pool, providing just enough shade to make your sun-bathing more comfortable. Also, relax in the lava rock enclosed hot tub next to the pool.",
 		},
 		{
 			title: "BBQ Pavilion",
 			img: "/bbq.jpg",
-			desc: "Five  equipped ",
+			desc: "Located around the pool and the garden, open pavilions are equipped with BBQ alcoves and dining sets to entertain small or large groups of guests and parties.",
 		},
 		{
 			title: "Library",
 			img: "/library.jpg",
-			desc: "A dedicated workspace, furnished with books and chairs.",
+			desc: "From holding private group meetings to entertaining groups of guests, residents can use the library that  is equipped with a screen, tables and chairs. Doors on each side of the room open into the lobby and the resort-like pool/garden areas.",
 		},
 		{
 			title: "Nature Walk Path",
 			img: "/walkpath.jpg",
-			desc: "A dedicated workspace, furnished with books and chairs.",
+			desc: "Follow the groves of palm trees and meander through the foot paths along the four acre property, pleasantly surprised by the pond at the end of the walk.  Enjoy native plants, landscape art and trellis in the nature walk right on the property of Watermark.",
 		},
 	],
 };
@@ -71,17 +73,17 @@ const explore = {
 		{
 			title: "Ala Moana Beach Park",
 			img: "/moanabeach.jpg",
-			desc: "Walk over the bridge to go to the beach",
+			desc: "Across the street from Watermark, Ala Moana Beach Park is a landmark for beautiful sunsets. Jog along the coastline against the splashing waves, stroll around the park or even participate in the yoga classes on the paddle boards while the sunsets in the ocean.",
 		},
 		{
 			title: "Ala Moana Mall",
 			img: "/moanamall.png",
-			desc: "Walk over the bridge to go to the beach",
+			desc: "Just steps away awaits an impressive shopping center where you can enjoy Hawaii’s low tax rate. From local brands to luxury brands, shoppers enjoy the beautiful Hawaiian weather, strolling under the open roof of the mall. The mall is home to well known department stores such as Neiman Marcus, Nordstroms, Bloomingdale’s, and Macy’s. Enjoy traditional Hawaiian performances throughout the day and dine in a wide selection of restaurants on the top floor of the mall.",
 		},
 		{
 			title: "International Marketplace",
 			img: "/international.png",
-			desc: "Walk over the bridge to go to the beach",
+			desc: "More than just a shopping, dining and entertainment destination in the heart of Waikiki, International Market Place is built around the iconic banyan tree that is more than a century old. Always bustling with people and music, the Marketplace is on foot within 15 minutes from the Watermark. During nighttime, enjoy street performances as you walk along the Waikiki strip.",
 		},
 	],
 };
@@ -92,23 +94,23 @@ const interior = {
 		{
 			title: "Living Area",
 			img: "/living.jpg",
-			desc: "Our living area features a pullout couch, dining area, 50' tv, ",
+			desc: "Our living area features ",
 		},
 		{
 			title: "Master Bedroom",
 			img: "/master.jpg",
-			desc: "Our living area features a pullout couch, dining area, 50' tv, ",
+			desc: "Our master bedroom features a walk-in closet, a dedicated workspace, and a king sized bed. Personalize your comfort with supplied bed linens, blankets, and comforters.",
 		},
 		{
 			title: "Bathroom",
 			img: "/bath.jpg",
-			desc: "Our living area features a pullout couch, dining area, 50' tv, ",
+			desc: "Our master bathroom has two individual sinks joined by a spacious countertop. Use shower or full tub. Additional amenities include toiletries, blow dryer, and towels.",
 		},
 
 		{
 			title: "Kitchen",
 			img: "/kitchen.jpg",
-			desc: "Our living area features a pullout couch, dining area, 50' tv, ",
+			desc: "Enjoy the comforts of dine-in food. Use our full set of cooking pans and pots, porcelain dish sets, and cooking tools. Amenities include: oven, microwave, diswasher. ",
 		},
 		{
 			title: "Bedroom",
@@ -195,9 +197,11 @@ export default function Home() {
 										) : (
 											<a
 												href={id}
-												className="hover:underline decoration-[1px] transition ease-in duration-300 cursor-pointer underline-offset-[12px] uppercase tracking-tight font-body font-thin"
+												className="hover:underline  decoration-[1px] transition ease-in duration-300 cursor-pointer underline-offset-[12px] uppercase tracking-tight font-body font-thin"
 											>
-												{title}
+												<div className="transition ease-in duration-500">
+													{title}
+												</div>
 											</a>
 										)}
 									</div>
@@ -216,17 +220,23 @@ export default function Home() {
 				</div>
 
 				<div className="w-full flex justify-center py-8">
-					<div className="grid grid-cols-1 md:grid-cols-2 items-start w-10/12 lg:w-8/12  grid-flow-row">
+					<div className="grid grid-cols-1 gap-y-4 items-start w-10/12 lg:w-8/12  grid-flow-row">
 						<div className="font-title text-4xl font-bold tracking-tight">
 							THE WATERMARK
 							<div className="text-lg font-body font-thin">
 								1551 Ala Wai Blvd, Honolulu
 							</div>
 						</div>
-						<div className="font-body font-thin text-lg">
-							It’s time to restore ourselves to our most natural state. Free
-							from stress and the hecticness of everyday life. Join us at The
-							Ritz-Carlton Maui, Kapalua to restore yourself to the wild.
+						<div className="font-body font-thin text-lg tracking-tight">
+							No other condominiums on Waikiki offer such resort style living as
+							The Watermark with its open air lobby, fantastic swimming pool
+							facilities, gorgeous ocean, marina and mountain views. Recently
+							renovated with modern hardwood floors and furniture, this special
+							unit offers exceptional comfort and style with a fully equipped
+							gourmet kitchen, efficient walk-in closet systems, clean marble
+							bathrooms, furnished bedrooms with working spaces, a dining area
+							and a living room expanding into a lanai for taking in beautiful
+							sunset views all around the year.
 						</div>
 					</div>
 				</div>

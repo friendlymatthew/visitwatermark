@@ -1,6 +1,29 @@
 import React, { useState } from "react";
 import CarouselButton from "./CarouselButton";
 
+const data = [
+	{
+		ct: 0,
+		src: "/top/lounge.svg",
+		id: "0",
+	},
+	{
+		ct: 1,
+		src: "/top/pool.svg",
+		id: "1",
+	},
+	{
+		ct: 2,
+		src: "/top/build.svg",
+		id: "2",
+	},
+	{
+		ct: 3,
+		src: "/top/waterfall.svg",
+		id: "3",
+	},
+];
+
 export default function Carousel() {
 	return (
 		<div className="flex w-full bg-white space-x-1">
@@ -13,6 +36,7 @@ export default function Carousel() {
 						<CarouselButton href="#slide2" prev={false} />
 					</div>
 				</div>
+
 				<div id="slide2" className="carousel-item relative w-full">
 					<img src="/top/pool.svg" className="w-full object-cover" />
 					<div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">

@@ -5,18 +5,21 @@ const options = {
 	maxDate: new Date("2030-01-01"),
 	minDate: new Date(),
 	theme: {
-		background: "text-[#c7ddf3] dark:bg-black rounded-none",
+		background: "dark:text-[#c7ddf3] dark:bg-black dark:rounded-none",
 		todayBtn:
-			"dark:bg-[#c7ddf3] rounded-none text-black dark:focus-none dark:hover:border-[#c7ddf3] dark:hover:border-[1px] dark:hover:text-[#c7ddf3] dark:hover:bg-black",
-		clearBtn: "rounded-none",
-		icons: "",
-		text: "dark:text-[#c7ddf3] dark:focus:text-black hover:text-black rounded-none dark:hover:bg-[#c7ddf3]",
+			"dark:bg-black dark:text-white dark:rounded-none dark:focus-none dark:hover:border-[#c7ddf3] dark:hover:border-[1px] dark:hover:text-[#c7ddf3] dark:hover:bg-black",
+		clearBtn:
+			"dark:bg-black dark:border-black dark:text-white dark:rounded-none dark:focus-none dark:hover:border-[#c7ddf3] dark:hover:border-[1px] dark:hover:text-[#c7ddf3] dark:hover:bg-black",
+		icons:
+			"dark:bg-black text-white dark:hover:border-[#c7ddf3] dark:hover:bg-black",
+		text: "dark:hover:bg-white dark:text-[#c7ddf3] dark:focus:text-black dark:hover:text-black dark:rounded-none",
 		disabledText:
-			"dark:text-[#c7ddf3] hover:text-black rounded-none dark:hover:bg-[#c7ddf3]",
-		selected: "border-[#c7ddf3] border-[1px] bg-black ",
+			"dark:hover:bg-white dark:text-[#c7ddf3] dark:hover:text-black dark:rounded-none",
+		selected:
+			"bg-white dark:border-[#c7ddf3] dark:border-[1px] dark:bg-black dark:rounded-none ",
 		input:
-			"dark:w-full dark:border-b-[2px] dark:placeholder:text-white cursor-pointer dark:bg-[#2b2a33] py-2 dark:outline-none focus:bg-gray-400 dark:text-lg dark:rounded-none dark:border-b-[#c7ddf3] dark:border-t-0 dark:border-x-0",
-		inputIcon: "fill-[#c7ddf3]",
+			"dark:w-full dark:border-b-[2px] dark:placeholder:text-white dark:cursor-pointer dark:bg-[#2b2a33] dark:py-2 dark:outline-none dark:focus:bg-gray-400 dark:text-lg dark:rounded-none dark:border-b-[#c7ddf3] dark:border-t-0 dark:border-x-0",
+		inputIcon: "dark:fill-[#c7ddf3]",
 	},
 	icons: {
 		// () => ReactNode | JSX.Element
@@ -73,9 +76,10 @@ export default function Availability() {
 	const [guests, setGuests] = useState("Number of guests");
 	const [email, setEmail] = useState("");
 	const [comments, setComments] = useState("");
-	const [color, setColor] = useState("#c7ddf3");
-
+	const [color, setColor] = useState("#e9f1fa");
+	const [isHovering, setIsHovering] = useState(false);
 	const form = useRef();
+	const [atitle, setAtitle] = useState("SUBMIT AVAILABILITY");
 
 	const handleChange = (selectedDate) => {
 		console.log(selectedDate);
@@ -93,7 +97,7 @@ export default function Availability() {
 		setEmail(event.target.value);
 	};
 
-	const ValidateEmail = (mail) => {
+	const badEmail = (mail) => {
 		if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
 			return false;
 		}
@@ -109,8 +113,10 @@ export default function Availability() {
 	const sendEmail = (e) => {
 		e.preventDefault();
 
-		if (ValidateEmail(email) || guests === "Number of guests") {
-			alert("Invalid form");
+		if (badEmail(email) || guests === "Number of guests") {
+			alert("Invalid form, please check if all fields are filled");
+			setAtitle("Please fill out all fields");
+			setColor("#c7c7f3");
 		} else {
 			emailjs
 				.sendForm(
@@ -123,10 +129,14 @@ export default function Availability() {
 					(result) => {
 						console.log(result.text);
 						alert("Message sent successfully");
+						setAtitle("Message sent successfully, Mahalo");
+						setColor("#9DC4EA");
 					},
 					(error) => {
 						console.log(error.text);
 						alert("System Error, please try again");
+						setAtitle("System Error, please try again");
+						setColor("#F3C7DD");
 					}
 				);
 		}
@@ -159,7 +169,9 @@ export default function Availability() {
 							onChange={handleSelect}
 							className="cursor-pointer w-full p-2 text-lg  group-focus:bg-[#747474]"
 						>
-							<option defaultValue={true}>Number of guests</option>
+							<option value="1" defaultValue={true}>
+								Number of guests
+							</option>
 							<option value="1">1 Guest</option>
 							<option value="2">2 Guests</option>
 							<option value="3">3 Guests</option>
@@ -168,7 +180,6 @@ export default function Availability() {
 							<option value="6">6 Guests</option>
 						</select>
 					</span>
-
 					<span className="flex items-center cursor-pointer border-b-[2px] bg-[#2b2a33] pl-1 border-[#c7ddf3]">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -193,13 +204,22 @@ export default function Availability() {
 						/>
 					</span>
 
-					<div className="w-full">
+					<div
+						className="relative"
+						onMouseOver={() => setIsHovering(true)}
+						onMouseOut={() => setIsHovering(false)}
+					>
 						<Datepicker
 							options={options}
 							onChange={handleChange}
 							show={show}
 							setShow={handleClose}
 						/>
+						{isHovering && (
+							<div className="absolute top-[-40px] left-0 text-body font-thin text-black bg-white text-sm p-2">
+								Please enter your desired start date, Mahalo
+							</div>
+						)}
 					</div>
 				</div>
 				<div className="pt-4 text-lg">
@@ -215,11 +235,7 @@ export default function Availability() {
 					<input name="date" value={selectedDate} className="hidden" />
 				</div>
 
-				<PrimaryButton
-					title="SUBMIT AVAILABILITY"
-					type={"submit"}
-					color={color}
-				/>
+				<PrimaryButton title={atitle} type={"submit"} color={color} />
 			</form>
 		</div>
 	);

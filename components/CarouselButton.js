@@ -2,7 +2,7 @@ export default function CarouselButton({ href, prev }) {
 	return (
 		<div>
 			{prev == true ? (
-				<a
+				<button
 					href={href}
 					className="block bg-[#d6d4d0] rounded-sm px-2 py-8 border-none"
 				>
@@ -20,10 +20,11 @@ export default function CarouselButton({ href, prev }) {
 							d="M15.75 19.5L8.25 12l7.5-7.5"
 						/>
 					</svg>
-				</a>
+				</button>
 			) : (
 				<a
 					href={href}
+					onClick={(e) => {}}
 					className="block bg-[#d6d4d0] rounded-sm px-2 py-8 border-none"
 				>
 					<svg
