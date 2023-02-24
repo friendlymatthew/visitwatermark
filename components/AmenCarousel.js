@@ -1,48 +1,35 @@
 import React, { useState } from "react";
 
-const photos = [
-	{
-		src: "/top/lounge.svg",
-	},
-	{
-		src: "/top/build.svg",
-	},
-	{
-		src: "/top/pool.svg",
-	},
-	{
-		src: "/top/waterfall.svg",
-	},
-];
+export default function AmenCarousel({ title, body }) {
+	const [idx, setIdx] = useState(0);
 
-export default function CarouselTwo() {
-	const [curr, setCurr] = useState(0);
-
-	const handleBack = (e) => {
-		if (curr == 0) {
-			setCurr(photos.length - 1);
+	const handleNext = () => {
+		if (idx == body.length - 1) {
+			setIdx(0);
 		} else {
-			setCurr(curr - 1);
+			setIdx(idx + 1);
 		}
 	};
 
-	const handleFront = (e) => {
-		if (curr == photos.length - 1) {
-			setCurr(0);
+	const handlePrev = () => {
+		if (idx == 0) {
+			setIdx(body.length - 1);
 		} else {
-			setCurr(curr + 1);
+			setIdx(idx - 1);
 		}
 	};
 
 	return (
-		<div className="flex justify-center w-full">
-			<div className="md:w-2/12 w-1/12 md:bg-[url('/back.svg')] mr-1"></div>
-			<div className="md:w-8/12 w-10/12">
-				<div className="relative">
-					<img className="" src={photos[curr].src} />
+		<div className="w-10/12 lg:w-8/12  text-body py-12 text-black text-body font-thin">
+			<div className="text-lg text-body uppercase tracking-wide pb-4">
+				{title}
+			</div>
+			<div className="grid grid-cols-3 hover:bg-white hover:border hover:border-black transition ease-in duration-75 p-8">
+				<div className="relative col-span-2">
+					<img className="w-full" src={body[idx].img} />
 					<button
 						className="cursor-pointer left-4 absolute top-[48px] md:top-[115px] lg:top-[225px] py-4 md:py-8 px-2 bg-white border-black border hover:bg-slate-200 transition ease-in duration-300 focus:ring-2"
-						onClick={handleBack}
+						onClick={handlePrev}
 					>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +48,7 @@ export default function CarouselTwo() {
 					</button>
 					<button
 						className="cursor-pointer right-4 absolute top-[48px] md:top-[115px] lg:top-[225px] py-4 md:py-8 px-2 bg-white border-black border hover:bg-slate-200 transition ease-in duration-300 focus:ring-2"
-						onClick={handleFront}
+						onClick={handleNext}
 					>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -79,8 +66,11 @@ export default function CarouselTwo() {
 						</svg>
 					</button>
 				</div>
+				<div className="px-4 text-base">
+					<div className="font-semibold pb-3">{body[idx].title}</div>
+					<div>{body[idx].desc}</div>
+				</div>
 			</div>
-			<div className="md:w-2/12 w-1/12 md:bg-[url('/back2.svg')] ml-1"></div>
 		</div>
 	);
 }

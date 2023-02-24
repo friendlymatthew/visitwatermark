@@ -12,6 +12,7 @@ import Location from "@/components/Location";
 import Carousel from "@/components/Carousel";
 import Header from "@/components/Header";
 import CarouselTwo from "@/components/CarouselTwo";
+import AmenCarousel from "@/components/AmenCarousel";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -124,7 +125,7 @@ const interior = {
 			desc: "Our living area features a pullout couch, dining area, 50' tv, ",
 		},
 		{
-			title: "Patio",
+			title: "Lanai",
 			img: "/veranda.jpg",
 			desc: "Our living area features a pullout couch, dining area, 50' tv, ",
 		},
@@ -190,14 +191,14 @@ export default function Home() {
 										{title === "Reserve Now" ? (
 											<a
 												href={id}
-												className="block border-2 py-[3px] px-8 border-black hover:bg-black hover:text-white transition ease-in duration-300 cursor-pointer underline-offset-[12px] uppercase  font-body font-extrabold"
+												className="block border py-[3px] px-8 border-black hover:bg-black hover:text-white transition ease-in duration-300 cursor-pointer underline-offset-[12px] uppercase  font-body font-extrabold"
 											>
 												{title}
 											</a>
 										) : (
 											<a
 												href={id}
-												className="hover:underline  decoration-[1px] transition ease-in duration-300 cursor-pointer underline-offset-[12px] uppercase tracking-tight font-body font-thin"
+												className="hover:underline  decoration-[1px] transition ease-in duration-300 cursor-pointer underline-offset-[12px] uppercase tracking-wide font-body font-thin"
 											>
 												<div className="transition ease-in duration-500">
 													{title}
@@ -213,7 +214,7 @@ export default function Home() {
 			</header>
 			<main className="w-full bg-white text-[#1c1c1c] grid grid-cols-1">
 				<div className="w-full" id="home">
-					<Carousel />
+					<CarouselTwo />
 				</div>
 				<div id="reserve" className="bg-[#1c1c1c] w-full flex justify-center">
 					<Availability />
@@ -245,7 +246,11 @@ export default function Home() {
 					id="homeoverview"
 					className="bg-[#e9f1fa] flex justify-center w-full"
 				>
-					<Amenities title={interior.title} body={interior.body} />
+					<AmenCarousel title={interior.title} body={interior.body} />
+				</div>
+
+				<div id="aptamenities" className="bg-white flex justify-center w-full">
+					<AmenCarousel title={apartment.title} body={apartment.body} />
 				</div>
 
 				<div id="waikiki" className="flex justify-center w-full">
@@ -254,12 +259,6 @@ export default function Home() {
 
 				<div className="flex justify-center w-full">
 					<Amenities title={transportation.title} body={transportation.body} />
-				</div>
-				<div
-					id="aptamenities"
-					className="bg-[#e9f1fa] flex justify-center w-full"
-				>
-					<Amenities title={apartment.title} body={apartment.body} />
 				</div>
 
 				<div id="reviews" className="flex justify-center w-full py-20">
