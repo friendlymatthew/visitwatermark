@@ -57,7 +57,7 @@ export default function Footer() {
 												href={id}
 												className="hover:underline hover:opacity-100  decoration-[1px] transition ease-in duration-300 cursor-pointer underline-offset-2 uppercase tracking-wide font-body font-thin"
 											>
-												<div className="bg-white hover:opacity-100 p-2 underline transition ease-in duration-300 ">
+												<div className="border border-black bg-white hover:opacity-100 p-2 underline transition ease-in duration-300 ">
 													{title}
 												</div>
 											</a>

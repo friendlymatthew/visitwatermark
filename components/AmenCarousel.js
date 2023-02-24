@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export default function AmenCarousel({ title, body }) {
 	const [idx, setIdx] = useState(0);
@@ -19,9 +19,14 @@ export default function AmenCarousel({ title, body }) {
 		}
 	};
 
-	const handleTarget = ({ id }) => {
+	const handleTarget = (id) => {
+		console.log("ismail: " + id);
 		setIdx(id);
 	};
+
+	useEffect(() => {
+		console.log(idx);
+	}, [idx]);
 
 	return (
 		<div className="w-10/12 lg:w-8/12  text-body py-12 text-black text-body font-thin">
@@ -69,26 +74,26 @@ export default function AmenCarousel({ title, body }) {
 							/>
 						</svg>
 					</button>
+					<div className="absolute bottom-0 bg-white py-4 flex justify-around bg-opacity-60 mt-8 items-center w-full h-4">
+						{body.map(({ title, id }) => {
+							return (
+								<button
+									onClick={() => {
+										handleTarget(id);
+									}}
+									key={id}
+									className="text-[0.7em] lg:text-[1em] cursor-pointer hover:underline underline-offset-[6px]"
+								>
+									{title}
+								</button>
+							);
+						})}
+					</div>
 				</div>
 				<div className="px-4 py-4 text-base">
 					<div className="font-semibold pb-3">{body[idx].title}</div>
-					<div>{body[idx].desc}</div>
+					<div className="text-sm">{body[idx].desc}</div>
 				</div>
-			</div>
-			<div className="mt-8 flex space-x-8 items-center w-full h-4">
-				{body.map(({ title, id }) => {
-					return (
-						<a
-							onClick={({ id }) => {
-								handleTarget;
-							}}
-							key={id}
-							className="text-sm cursor-pointer hover:underline underline-offset-[12px]"
-						>
-							{title}
-						</a>
-					);
-				})}
 			</div>
 		</div>
 	);
