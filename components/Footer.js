@@ -39,12 +39,12 @@ export default function Footer() {
 						</div>
 					</AnimationOnScroll>
 				</div>
-				<div className="sticky top-0 z-30 bg-white bg-opacity-80 text-black border-b-[0.5px] border-black">
+				<div className="w-full text-black">
 					<div className=" flex justify-center w-full py-4 text-sm sticky top-0 z-50">
-						<div className="w-10/12 lg:w-8/12 flex flex-wrap space-y-2 justify-between">
+						<div className="w-10/12 lg:w-8/12 flex items-center flex-wrap space-y-2 justify-between">
 							{navactions.map(({ id, title }) => {
 								return (
-									<div key={id} className="opacity-100">
+									<div key={id} className="">
 										{title === "Reserve Now" ? (
 											<a
 												href={id}
@@ -57,7 +57,7 @@ export default function Footer() {
 												href={id}
 												className="hover:underline hover:opacity-100  decoration-[1px] transition ease-in duration-300 cursor-pointer underline-offset-2 uppercase tracking-wide font-body font-thin"
 											>
-												<div className="hover:opacity-100 p-1 underline transition ease-in duration-300 ">
+												<div className="bg-white hover:opacity-100 p-2 underline transition ease-in duration-300 ">
 													{title}
 												</div>
 											</a>

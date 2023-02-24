@@ -32,7 +32,7 @@ const RatingBar = ({ rating }) => {
 		stars.push(<div key={fullStars} style={partiallyFilledCircle} />);
 	}
 
-	return <div className="mt-2">{stars}</div>;
+	return <div className="mt-2 flex flex-nowrap">{stars}</div>;
 };
 
 export default RatingBar;

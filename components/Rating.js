@@ -77,7 +77,7 @@ export default function Rating() {
 	}, []);
 
 	return (
-		<div className="w-10/12 lg:w-8/12  border-[0.5px] border-gray-400 py-8">
+		<div className="w-full md:10/12 lg:w-8/12  border-[0.5px] border-gray-400 py-8">
 			<AnimationOnScroll
 				animateIn="animate__fadeIn"
 				duration={1}
@@ -90,7 +90,7 @@ export default function Rating() {
 					</span>
 				</div>
 			</AnimationOnScroll>
-			<div className="grid grid-cols-1 md:grid-cols-2 px-4 md:px-20 gap-x-20 gap-y-4">
+			<div className="grid grid-cols-1 px-4 md:px-20 gap-x-4 lg:gap-x-20 gap-y-4">
 				{avgRating.map(({ cat, val }) => {
 					return (
 						<AnimationOnScroll
@@ -98,7 +98,7 @@ export default function Rating() {
 							duration={1}
 							key={cat}
 						>
-							<div className="lg:px-20 flex-none lg:flex font-thin text-xl font-body justify-between items-center">
+							<div className="px-2 lg:px-20 flex-none lg:flex font-thin text-base lg:text-xl font-body justify-between items-center">
 								<div className="flex items-center space-x-2">
 									<div>{cat} </div>
 									<div className="text-sm">({val})</div>

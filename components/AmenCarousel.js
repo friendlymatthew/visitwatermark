@@ -19,16 +19,20 @@ export default function AmenCarousel({ title, body }) {
 		}
 	};
 
+	const handleTarget = ({ id }) => {
+		setIdx(id);
+	};
+
 	return (
 		<div className="w-10/12 lg:w-8/12  text-body py-12 text-black text-body font-thin">
 			<div className="text-lg text-body uppercase tracking-wide pb-4">
 				{title}
 			</div>
-			<div className="grid grid-cols-3 hover:bg-white hover:border hover:border-black transition ease-in duration-75 p-8">
+			<div className="grid grid-cols-3 hover:bg-white transition ease-in duration-200">
 				<div className="relative col-span-2">
 					<img className="w-full" src={body[idx].img} />
 					<button
-						className="cursor-pointer left-4 absolute top-[48px] md:top-[115px] lg:top-[225px] py-4 md:py-8 px-2 bg-white border-black border hover:bg-slate-200 transition ease-in duration-300 focus:ring-2"
+						className="cursor-pointer left-4 absolute top-[48px] md:top-[115px] lg:top-[225px] py-4 px-2 bg-white border-black border hover:bg-slate-200 transition ease-in duration-300 focus:ring-2"
 						onClick={handlePrev}
 					>
 						<svg
@@ -47,7 +51,7 @@ export default function AmenCarousel({ title, body }) {
 						</svg>
 					</button>
 					<button
-						className="cursor-pointer right-4 absolute top-[48px] md:top-[115px] lg:top-[225px] py-4 md:py-8 px-2 bg-white border-black border hover:bg-slate-200 transition ease-in duration-300 focus:ring-2"
+						className="cursor-pointer right-4 absolute top-[48px] md:top-[115px] lg:top-[225px] py-4 px-2 bg-white border-black border hover:bg-slate-200 transition ease-in duration-300 focus:ring-2"
 						onClick={handleNext}
 					>
 						<svg
@@ -66,10 +70,25 @@ export default function AmenCarousel({ title, body }) {
 						</svg>
 					</button>
 				</div>
-				<div className="px-4 text-base">
+				<div className="px-4 py-4 text-base">
 					<div className="font-semibold pb-3">{body[idx].title}</div>
 					<div>{body[idx].desc}</div>
 				</div>
+			</div>
+			<div className="mt-8 flex space-x-8 items-center w-full h-4">
+				{body.map(({ title, id }) => {
+					return (
+						<a
+							onClick={({ id }) => {
+								handleTarget;
+							}}
+							key={id}
+							className="text-sm cursor-pointer hover:underline underline-offset-[12px]"
+						>
+							{title}
+						</a>
+					);
+				})}
 			</div>
 		</div>
 	);

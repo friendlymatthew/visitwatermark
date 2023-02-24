@@ -36,31 +36,37 @@ const apartment = {
 	title: "Apartment Amenities",
 	body: [
 		{
+			id: 0,
 			title: "Outdoor Lounge",
 			img: "/lounge.jpg",
 			desc: "The beautiful ground floor lobby welcomes the guests with Hawaiian artworks, marble floors and spacious seating areas. Open all around, the lobby steps down to the resort-like pool and garden, truly making your arrival to Hawaii special. Professional concierge service at the front desk provides security to residents at all times.",
 		},
 		{
+			id: 1,
 			title: "Wellness Spa",
 			img: "/wellness.jpg",
 			desc: "This luxurious air conditioned pavilion includes a fully equipped weight rack and recently updated fitness center and two sauna rooms. Residents can enjoy the beautiful garden view while exercising. Fitness room amenities include: ellipticals, stationary bikes, treadmills, and weight equipment.",
 		},
 		{
+			id: 2,
 			title: "Swimming Pool",
 			img: "/swimming.jpg",
 			desc: "Surrounded by natural stone tiles, this beautiful infinity pool is designed aesthetically with lava rocks and palm trees. Giant palm trees surround the pool, providing just enough shade to make your sun-bathing more comfortable. Also, relax in the lava rock enclosed hot tub next to the pool.",
 		},
 		{
+			id: 3,
 			title: "BBQ Pavilion",
 			img: "/bbq.jpg",
 			desc: "Located around the pool and the garden, open pavilions are equipped with BBQ alcoves and dining sets to entertain small or large groups of guests and parties.",
 		},
 		{
+			id: 4,
 			title: "Library",
 			img: "/library.jpg",
 			desc: "From holding private group meetings to entertaining groups of guests, residents can use the library that  is equipped with a screen, tables and chairs. Doors on each side of the room open into the lobby and the resort-like pool/garden areas.",
 		},
 		{
+			id: 5,
 			title: "Nature Walk Path",
 			img: "/walkpath.jpg",
 			desc: "Follow the groves of palm trees and meander through the foot paths along the four acre property, pleasantly surprised by the pond at the end of the walk.  Enjoy native plants, landscape art and trellis in the nature walk right on the property of Watermark.",
@@ -93,38 +99,45 @@ const interior = {
 	title: "Interior Amenities",
 	body: [
 		{
+			id: 0,
 			title: "Living Area",
 			img: "/living.jpg",
 			desc: "Our living area features ",
 		},
 		{
+			id: 1,
 			title: "Master Bedroom",
 			img: "/master.jpg",
 			desc: "Our master bedroom features a walk-in closet, a dedicated workspace, and a king sized bed. Personalize your comfort with supplied bed linens, blankets, and comforters.",
 		},
 		{
+			id: 2,
 			title: "Bathroom",
 			img: "/bath.jpg",
 			desc: "Our master bathroom has two individual sinks joined by a spacious countertop. Use shower or full tub. Additional amenities include toiletries, blow dryer, and towels.",
 		},
 
 		{
+			id: 3,
 			title: "Kitchen",
 			img: "/kitchen.jpg",
 			desc: "Enjoy the comforts of dine-in food. Use our full set of cooking pans and pots, porcelain dish sets, and cooking tools. Amenities include: oven, microwave, diswasher. ",
 		},
 		{
+			id: 4,
 			title: "Bedroom",
 			img: "/second.jpg",
 			desc: "Our living area features a pullout couch, dining area, 50' tv, ",
 		},
 
 		{
+			id: 5,
 			title: "Laundry",
 			img: "/bath2.jpg",
 			desc: "Our living area features a pullout couch, dining area, 50' tv, ",
 		},
 		{
+			id: 6,
 			title: "Lanai",
 			img: "/veranda.jpg",
 			desc: "Our living area features a pullout couch, dining area, 50' tv, ",
