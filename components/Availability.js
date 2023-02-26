@@ -129,7 +129,7 @@ export default function Availability() {
 					(result) => {
 						console.log(result.text);
 						alert("Message sent successfully");
-						setAtitle("Message sent successfully, Mahalo");
+						setAtitle("Message sent successfully, mahalo");
 						setColor("#9DC4EA");
 					},
 					(error) => {
@@ -217,7 +217,7 @@ export default function Availability() {
 						/>
 						{isHovering && (
 							<div className="absolute top-[-40px] left-0 text-body font-thin text-black bg-white text-sm p-2">
-								Please enter your desired start date, Mahalo
+								Please enter your desired start date, mahalo
 							</div>
 						)}
 					</div>
