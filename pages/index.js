@@ -102,45 +102,125 @@ const interior = {
 			id: 0,
 			title: "Living Area",
 			img: "/living.jpg",
-			desc: "Our living area features ",
+			desc: [
+				{
+					thing:
+						"Open living concept, connecting living room, dining room and lanai",
+				},
+				{
+					thing: "Newly installed hardwood floor",
+				},
+				{
+					thing: "65' TV with cable and internet",
+				},
+				{
+					thing: "Pullout couch",
+				},
+				{
+					thing: "Dining table that can seat up to six people",
+				},
+
+				{
+					thing: "Central air conditioning",
+				},
+			],
 		},
 		{
 			id: 1,
 			title: "Master Bedroom",
 			img: "/master.jpg",
-			desc: "Our master bedroom features a walk-in closet, a dedicated workspace, and a king sized bed. Personalize your comfort with supplied bed linens, blankets, and comforters.",
+			desc: [
+				{
+					thing: "King size bed",
+				},
+				{
+					thing: "Dedicated workspace",
+				},
+				{
+					thing: "Walk-in closet, stores additional bedding linens",
+				},
+			],
 		},
 		{
 			id: 2,
 			title: "Bathroom",
 			img: "/bath.jpg",
-			desc: "Our master bathroom has two individual sinks joined by a spacious countertop. Use shower or full tub. Additional amenities include toiletries, blow dryer, and towels.",
+			desc: [
+				{
+					thing:
+						"Clean and spacious marble bathroom with a bath tub and a shower booth",
+				},
+				{
+					thing:
+						"Two individual sinks and spacious countertops and shelf storage",
+				},
+				{
+					thing: "Towels and blow dryer supplied",
+				},
+			],
 		},
 
 		{
 			id: 3,
 			title: "Kitchen",
 			img: "/kitchen.jpg",
-			desc: "Enjoy the comforts of dine-in food. Use our full set of cooking pans and pots, porcelain dish sets, and cooking tools. Amenities include: oven, microwave, diswasher. ",
+			desc: [
+				{
+					thing: "Full scale kitchen equipped with Viking appliances",
+				},
+				{
+					thing:
+						"Other kitchen appliances include: sous-vide, toaster, food processor, air fryer, rice cooker, Nespresso, and Nutri Bullet",
+				},
+				{
+					thing:
+						"Complete selection of cookware, dishes and utensils for all cuisines",
+				},
+			],
 		},
 		{
 			id: 4,
 			title: "Bedroom",
 			img: "/second.jpg",
-			desc: "Our living area features a pullout couch, dining area, 50' tv, ",
+			desc: [
+				{
+					thing: "Two twin sized beds with adjustable bed frames",
+				},
+				{
+					thing: "Closet, stores additional bedding linens",
+				},
+				{
+					thing: "Dedicated workspace",
+				},
+			],
 		},
 
 		{
 			id: 5,
 			title: "Laundry",
 			img: "/bath2.jpg",
-			desc: "Our living area features a pullout couch, dining area, 50' tv, ",
+			desc: [
+				{ thing: "Washer and dryer" },
+				{
+					thing:
+						"Ironing board, iron, cleaning supplies, Miele vacuum cleaner provided",
+				},
+				{ thing: "Additional storage space" },
+			],
 		},
 		{
 			id: 6,
 			title: "Lanai",
 			img: "/veranda.jpg",
-			desc: "Our living area features a pullout couch, dining area, 50' tv, ",
+			desc: [
+				{
+					thing: "Modern dining table set for outdoor dining",
+				},
+				{
+					thing:
+						"Overlooks the Ala Wai canal, Ala Moana beach, and the yacht harbor",
+				},
+			],
 		},
 	],
 };
@@ -262,9 +342,10 @@ export default function Home() {
 					<AmenCarousel title={interior.title} body={interior.body} />
 				</div>
 
-				<div id="aptamenities" className="bg-white flex justify-center w-full">
-					<AmenCarousel title={apartment.title} body={apartment.body} />
-				</div>
+				<div
+					id="aptamenities"
+					className="bg-white flex justify-center w-full"
+				></div>
 
 				<div id="waikiki" className="flex justify-center w-full">
 					<Amenities title={explore.title} body={explore.body} />

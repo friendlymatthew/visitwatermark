@@ -33,7 +33,7 @@ export default function AmenCarousel({ title, body }) {
 			<div className="text-lg text-body uppercase tracking-wide pb-4">
 				{title}
 			</div>
-			<div className="grid grid-cols-3 hover:bg-white transition ease-in duration-200">
+			<div className="grid grid-cols-3 transition ease-in duration-200">
 				<div className="relative col-span-2">
 					<img className="w-full" src={body[idx].img} />
 					<button
@@ -90,9 +90,18 @@ export default function AmenCarousel({ title, body }) {
 						})}
 					</div>
 				</div>
-				<div className="px-4 py-4 text-base">
+				<div className="px-4 text-lg">
 					<div className="font-semibold pb-3">{body[idx].title}</div>
-					<div className="text-sm">{body[idx].desc}</div>
+					<ul className="text-sm flex flex-col space-y-4">
+						{body[idx].desc.map(({ thing }) => {
+							return (
+								<li className="flex space-x-1">
+									<div>◦</div>
+									<div>{thing}</div>
+								</li>
+							);
+						})}
+					</ul>
 				</div>
 			</div>
 		</div>
