@@ -95,7 +95,7 @@ export default function AmenCarousel({ title, body }) {
 					<ul className="text-sm flex flex-col space-y-4">
 						{body[idx].desc.map(({ thing }) => {
 							return (
-								<li className="flex space-x-1">
+								<li key={thing} className="flex space-x-1">
 									<div>◦</div>
 									<div>{thing}</div>
 								</li>
