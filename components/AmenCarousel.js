@@ -29,10 +29,8 @@ export default function AmenCarousel({ title, body }) {
 	}, [idx]);
 
 	return (
-		<div className="w-10/12 lg:w-8/12  text-body py-12 text-black text-body font-thin">
-			<div className="text-lg text-body uppercase tracking-wide pb-4">
-				{title}
-			</div>
+		<div className="w-10/12 lg:w-8/12 font-body py-12 text-black font-thin">
+			<div className="text-lg uppercase tracking-wide pb-4">{title}</div>
 			<div className="grid grid-cols-3 transition ease-in duration-200">
 				<div className="relative col-span-2">
 					<img className="w-full" src={body[idx].img} />
@@ -74,7 +72,7 @@ export default function AmenCarousel({ title, body }) {
 							/>
 						</svg>
 					</button>
-					<div className="absolute bottom-0 bg-white py-4 flex justify-around bg-opacity-60 mt-8 items-center w-full h-4">
+					<div className="absolute bg-white py-4 flex justify-around bg-opacity-60 items-center w-full h-4">
 						{body.map(({ title, id }) => {
 							return (
 								<button
@@ -82,7 +80,7 @@ export default function AmenCarousel({ title, body }) {
 										handleTarget(id);
 									}}
 									key={id}
-									className="text-[0.7em] lg:text-[1em] cursor-pointer hover:underline underline-offset-[6px]"
+									className="text-[0.8em] lg:text-[1em] cursor-pointer hover:underline underline-offset-[6px]"
 								>
 									{title}
 								</button>
@@ -90,14 +88,17 @@ export default function AmenCarousel({ title, body }) {
 						})}
 					</div>
 				</div>
-				<div className="px-4 text-lg">
-					<div className="font-semibold pb-3">{body[idx].title}</div>
-					<ul className="text-sm flex flex-col space-y-4">
+				<div className="px-4 text-lg font-body">
+					<div className="pb-3 uppercase ">{body[idx].title}</div>
+					<ul className="text-[1em] flex flex-col space-y-[0.5px] lg:space-y-4">
 						{body[idx].desc.map(({ thing }) => {
 							return (
-								<li key={thing} className="flex space-x-1">
+								<li
+									key={thing}
+									className="flex space-x-1 font-thin items-start"
+								>
 									<div>◦</div>
-									<div>{thing}</div>
+									<div className="text-sm lg:text-base">{thing}</div>
 								</li>
 							);
 						})}

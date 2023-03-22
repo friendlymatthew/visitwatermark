@@ -39,7 +39,7 @@ export default function CarouselTwo() {
 			<div className="md:w-2/12 w-1/12 md:bg-[url('/back.svg')] mr-1"></div>
 			<div className="md:w-8/12 w-10/12">
 				<div className="relative">
-					<img className="" src={photos[curr].src} />
+					<img className="w-full" src={photos[curr].src} />
 					<button
 						className="cursor-pointer left-4 absolute top-[48px] md:top-[115px] lg:top-[225px] py-4 md:py-8 px-2 bg-white border-black border hover:bg-slate-200 transition ease-in duration-300 focus:ring-2"
 						onClick={handleBack}

@@ -39,33 +39,18 @@ export default function Footer() {
 						</div>
 					</AnimationOnScroll>
 				</div>
-				<div className="w-full text-black">
-					<div className=" flex justify-center w-full py-4 text-sm sticky top-0 z-50">
-						<div className="w-10/12 lg:w-8/12 flex items-center flex-wrap space-y-2 justify-between">
-							{navactions.map(({ id, title }) => {
-								return (
-									<div key={id} className="">
-										{title === "Reserve Now" ? (
-											<a
-												href={id}
-												className="block hover:opacity-100 bg-white border py-[3px] px-8 border-black hover:bg-black hover:text-white transition ease-in duration-300 cursor-pointer underline-offset-[12px] uppercase  font-body font-extrabold"
-											>
-												{title}
-											</a>
-										) : (
-											<a
-												href={id}
-												className="hover:underline hover:opacity-100  decoration-[1px] transition ease-in duration-300 cursor-pointer underline-offset-2 uppercase tracking-wide font-body font-thin"
-											>
-												<div className="border border-black bg-white hover:opacity-100 p-2 underline transition ease-in duration-300 ">
-													{title}
-												</div>
-											</a>
-										)}
-									</div>
-								);
-							})}
-						</div>
+				<div className="w-full text-black flex justify-center">
+					<div className="w-8/12 bg-white flex justify-around p-2 bg-opacity-70">
+						{navactions.map(({ id, title }) => {
+							return (
+								<a
+									href={id}
+									className="block font-body font-thin border border-black px-2 py-1 bg-white"
+								>
+									{title}
+								</a>
+							);
+						})}
 					</div>
 				</div>
 			</div>

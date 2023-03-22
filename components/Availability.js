@@ -216,7 +216,7 @@ export default function Availability() {
 							setShow={handleClose}
 						/>
 						{isHovering && (
-							<div className="absolute top-[-40px] left-0 text-body font-thin text-black bg-white text-sm p-2">
+							<div className="absolute top-[-40px] left-0 font-thin text-black bg-white text-sm p-2">
 								Please enter your desired start date, mahalo
 							</div>
 						)}
